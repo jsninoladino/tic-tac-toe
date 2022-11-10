@@ -32,3 +32,11 @@ class Grid:
     @cached_property
     def empty_count(self) -> int:
         return self.cells.count(" ")
+
+@dataclass(frozen=True)
+class Move:
+    mark:Mark
+    cell_index:int
+    before_state: "GameState"
+    after_state: "GameState"
+
